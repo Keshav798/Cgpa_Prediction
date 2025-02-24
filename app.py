@@ -54,6 +54,6 @@ def predict(data: InputData):
         y_pred = model.predict([X_seq, X_static, X_extra])
         y_pred = y_pred * 10
 
-        return {"predicted_cgpa": float(y_pred[0][0])}
+        return {"predicted_cgpa_list": float(y_pred[0])}
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Prediction failed: {str(e)}")
